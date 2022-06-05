@@ -1,7 +1,7 @@
 var str="Hello try typing this to test the speed of your typing with our Speed Typing website"
 var str1="You have successfully completed a paragraph ,Contuinue typing before th time runs out"
 var t
-var final = "<div class='card-header'><h2>Your Result is here</h2></div><div class='card-body'><div id='wpm'>WPM = </div><div id=acc>Accuracy</div></div><div id='ret'><button class='btn btn-success'><a href='index.html'  style='text-decoration:none ;'>Retake test</a></button></div>"
+var final = "<div class='card-header'><h2>Your Result is here</h2></div><div class='card-body'><div id='wpm'>WPM = </div><div id=acc>Accuracy</div></div><div id='ret'><button class='btn btn-light'><a href='index.html'  style='text-decoration:none ;'>Retake test</a></button></div>"
 
 
 function start(){
