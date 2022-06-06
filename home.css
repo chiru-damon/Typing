@@ -1,12 +1,16 @@
-input, select, textarea{
-    color: #ff0000;
-}
 
-textarea:focus, input:focus {
-    color: #ff0000;
+body {
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-#nav{
-    background-color: black;
-    color: whitesmoke;
+#body {
+  font-size: medium;
+}
+#i2 {
+  font-size: 20;
+  font-family: "Lucida console";
+}
+#cover{
+    float: left;
 }
