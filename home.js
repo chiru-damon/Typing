@@ -1,6 +1,6 @@
 var str="Hello try typing this to test the speed of your typing with our Speed Typing website"
-var str1="You have successfully completed a paragraph ,Contuinue typing before th time runs out"
-var t
+var str1="You have successfully completed a paragraph ,Continue typing before the time runs out"
+var count
 var final = "<div class='card-header'><h2>Your Result is here</h2></div><div class='card-body'><div id='wpm'>WPM = </div><div id=acc>Accuracy</div></div><div id='ret'><button class='btn btn-light'><a href='index.html'  style='text-decoration:none ;'>Retake test</a></button></div>"
 
 
@@ -15,7 +15,6 @@ function start(){
 function corr(){
   var inp=document.getElementById('i2')
   var val=inp.value
-  console.log(val)
   var i = val.length
   if (val===pos(i))
   {
@@ -24,8 +23,7 @@ function corr(){
   else{
       inp.style.color='red';
   }
-  if (val===str && t < 60){
-    console.log(t)
+  if (val===str && count < 60){
     var bo=document.getElementById("body")
     const len=str1.length
     var body="<p> "+str1+"</p><input id='i2' type='text' onkeypress='corr()' style='color:green;' maxlength='"+len+"'>"
@@ -45,20 +43,9 @@ function pos(x){
 }
 
 async function time(){
-  var i
-  t=0
   var time=document.getElementById("ti")
-  for(i=0;i<60;i++){
-    await sleep(1000)
-    t=t+1
-    time.innerText=t
+  var timer = setInterval(function() {
+    ti.innerHTML=(count++)+1;
+    if(count == 60){ clearInterval(timer);document.getElementById("cd").innerHTML=final}
+}, 1000)
   }
-  if (t===60){
-    document.getElementById("cd").innerHTML=final
-  }
-  
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
