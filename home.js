@@ -8,7 +8,7 @@ function start(){
   time()
   var bo=document.getElementById("body")
   const len=str.length
-  var body="<p> "+str+"</p><input id='i2' type='text' onkeypress='corr()' style='color:green;' maxlength='"+len+"'>"
+  var body="<p> "+str+"</p><input id='i2' type='text' onkeyup='corr()' style='color:green;' maxlength='"+len+"'>"
   bo.innerHTML=body
   document.getElementById('i2').focus()
 }
@@ -26,7 +26,7 @@ function corr(){
   if (val===str && count < 60){
     var bo=document.getElementById("body")
     const len=str1.length
-    var body="<p> "+str1+"</p><input id='i2' type='text' onkeypress='corr()' style='color:green;' maxlength='"+len+"'>"
+    var body="<p> "+str1+"</p><input id='i2' type='text' onkeyup='corr()' style='color:green;' maxlength='"+len+"'>"
     bo.innerHTML=body
     val=''
     str=str1
