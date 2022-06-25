@@ -44,7 +44,7 @@ function corr() {
     var body =
       "<p> " +
       str1 +
-      "</p><input id='i2' type='text' onkeypress='corr()' style='color:green;' maxlength='" +
+      "</p><input id='i2' type='text' onkeyup='corr()' style='color:green;' maxlength='" +
       len +
       "'>";
     bo.innerHTML = body;
