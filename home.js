@@ -2,7 +2,7 @@ var str =
   "Hello try typing this to test the speed of your typing with our Speed Typing website";
 var str1 =
   "You have successfully completed a paragraph ,Continue typing before the time runs out";
-var count,
+var count =0,
   v = 0,
   val,
   r = 0;
