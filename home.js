@@ -1,8 +1,8 @@
 var str =
   "Hello try typing this to test the speed of your typing with our Speed Typing website";
 var str1 =
-  "You have successfully completed a paragraph ,Contuinue typing before th time runs out";
-var t,
+  "You have successfully completed a paragraph ,Continue typing before the time runs out";
+var count,
   v = 0,
   val,
   r = 0;
@@ -19,7 +19,7 @@ function start() {
   var body =
     "<p> " +
     str +
-    "</p><input id='i2' type='text' onkeypress='corr()' style='color:green;' maxlength='" +
+    "</p><input id='i2' type='text' onkeyup='corr()' style='color:green;' maxlength='" +
     len +
     "'>";
   bo.innerHTML = body;
@@ -38,8 +38,7 @@ function corr() {
     inp.style.color = "red";
     r = r + 1;
   }
-  if (val === str && t < 60) {
-    console.log(t);
+  if (val === str && count < 60) {
     var bo = document.getElementById("body");
     const len = str1.length;
     var body =
@@ -69,24 +68,16 @@ function pos(x) {
 //this function runs the countdown using sleep funtion defined below
 //this function also displays the result after completion of time
 async function time() {
-  var i;
-  t = 0;
-  var time = document.getElementById("ti");
-  for (i = 0; i < 60; i++) {
-    await sleep(1000);
-    t = t + 1;
-    time.innerText = t;
-  }
-  if (t === 60) {
-    document.getElementById("cd").innerHTML = final;
-    v = v + val.length
+  var time=document.getElementById("ti")
+  var timer = setInterval(function() {
+    ti.innerHTML=(count++)+1;
+    if(count == 60){ 
+      clearInterval(timer);
+      document.getElementById("cd").innerHTML=final;
+      v = v + val.length
     document.getElementById("wpm").innerText = "WPM : " + Math.round(v / 5);
     document.getElementById("acc").innerText =
       "accuracy :" + Math.round(((v - r) / v) * 100) + "%";
-  }
-}
-
-//this function is used for time using setTimeout()
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+}, 1000)
 }
